@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
 "scripts": {
-  "build": "rimraf dist && babel . --ignore dist,node_modules -d dist --copy-files",
-  "clean-dist-node-modules": "rimraf dist/node_modules",
-  "start": "npm run build && npm run clean-dist-node-modules && node dist/index.js",
+  "build": "rimraf dist && babel src -d dist --copy-files",
+  "start": "node dist/index.js",
   "test": "echo \"Error: no test specified\" && exit 1"
-  },
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
