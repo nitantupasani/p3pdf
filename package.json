@@ -2,10 +2,11 @@
   "name": "p3venti-pdf-service",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build": "babel . -d dist --copy-files --ignore node_modules",
-  "start": "npm run build && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+"scripts": {
+  "build": "rimraf dist && babel . --ignore dist,node_modules -d dist --copy-files",
+  "clean-dist-node-modules": "rimraf dist/node_modules",
+  "start": "npm run build && npm run clean-dist-node-modules && node dist/index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "@babel/cli": "^7.28.0",
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
-    "@babel/preset-react": "^7.27.1"
+    "@babel/preset-react": "^7.27.1",
+    "rimraf": "^6.0.1"
   }
 }
